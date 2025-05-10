@@ -1,2 +1,4 @@
 # FantasyTest
-Проект Кирилла Ткаченко для Хакатона 2025
+Made By Kirill Tkachenko
+ВАЖНО !
+index.html = главная страница !
