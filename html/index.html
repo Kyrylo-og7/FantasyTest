@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PickYourFantasy.com</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+    <!-- анимированный фон -->
+
+
+    <div class="intro1" id = "intro1"></div>
+    <script src = "/js/p5.min.js"></script>
+    <script src = "/js/vanta.topology.min.js"></script>
+    <script src = "/js/app1.js"></script>
+    
+
+
+    <!-- кнопки на самом верху страницы -->
+
+    
+    <div class="buttons">
+        <button id = "but6" onclick = "scrollToSong()">Fantasy Музыка</button>
+        <button id = "but5" onclick = "scrollToTest()">Пройти тест</button>
+        <button id = "but22" onclick="scrollToTypes()">Типы Фатназии</button>
+    </div>
+
+
+    <!-- кнопка для того чтобы вернуться наверх -->
+
+    <button id = "but23" onclick="scrollToTop()">Наверх</button>
+
+
+    <!-- аудио -->
+    
+
+    <audio id = "myAudio1" src = "/sound/walk along.mp3"></audio>
+    <audio id="myAudio" src="/sound/4AYBAdhnHQVR.128.mp3"></audio>
+
+<!-- 
+    названия песен -->
+
+    <p id = "darkt2">Morelocke - A walk along the gates</p>
+    <p id = "darkt1">Dorian Concept - Hide CS01</p>
+
+
+    <!-- ссылка на больше песен -->
+
+    <button id = "but21" onclick="location.href = 'https://on.soundcloud.com/YXBwxaeq2wnUScR46'">Больше песен</button>
+
+
+    <!-- всякие фотки -->
+    
+
+    <img src = "/img/types.png" id = "types">
+
+    <img id = "dark2" src = "/img/dark fantasy.jpg">
+    <img id = "dark1" src = "/img/Снимок экрана 2025-05-03 195832.png">
+
+    <img id = "songs" src = "/img/songs.png">
+    <img id = "logo" src = "/img/pick.png">
+
+
+    <!-- остановить/запустить песню -->
+
+
+    <img src="/img/volume.png" alt="Кликни на фото" id ="music4" onclick="playMusic1()">
+    <img src = "/img/mute.png" id = "music5" onclick="stopMusic1()">
+
+    <img src="/img/high-volume.png" alt="Кликни на фото" id ="music" onclick="playMusic()">
+    <img src = "/img/silent.png" id = "music2" onclick="stopMusic()">
+
+    <img src="/img/volume.png" alt="Кликни на фото" id ="music1" onclick="playMusic()">
+    <img src = "/img/mute.png" id = "music3" onclick="stopMusic()">
+
+
+    <!-- ознакомительный текст -->
+
+
+    <h1 class = "first">✨ Погрузитесь в мир фантазии !✨</h1>
+    <p class = "second">У каждого из нас живёт свой собственный волшебный мир —<br> кто-то мечтает сразиться с драконом, 
+        кто-то жаждет разгадать древние тайны, а кто-то ищет магию в шумных городах.<br>
+        Пройди короткий, увлекательный тест и узнай, какой тип фэнтези ближе именно тебе:<br>
+        ⚔️ Dark Fantasy, 🧟 Bright Fantasy, ✨ Adventure Fantasy 🌆 High Fantasy</p>
+
+    <button id = "start" onclick = "location.href = '/html/log.html'">Пройти Тест !</button>
+
+
+        <!-- имя пользователя в правом углу -->
+
+    <a href = '/html/account.html'>
+    <span id = "username"></span>
+    </a>
+
+
+<!-- типы фантазий -->
+
+
+    <h1 class = "dark">Dark Fantasy</h1>
+    <p class = "dark1">мрачное, жестокое и тревожное фэнтези с элементами ужасов,
+     безнадёжности и моральной серости. Пример: "Игра престолов" Дж. Мартина.</p>
+    <h1 class = "bright">Bright Fantasy</h1>
+    <p class = "bright1">оптимистичное, лёгкое и доброжелательное фэнтези,
+    часто с чётким делением на добро и зло.
+     Пример: "Хроники Нарнии" К. Льюиса.</p>
+    <h1 class = "high">High Fantasy</h1>
+    <p class = "high1">ействие происходит в полностью вымышленном мире,
+     с глобальными конфликтами и эпическим масштабом. Пример: "Властелин колец" Дж. Р. Р. Толкина.</p>
+    <h1 class = "Adventure">Adventure Fantasy</h1>
+    <p class = "Adventure1">акцент на динамичные события, путешествия,
+    сражения и квесты; более лёгкий и увлекательный стиль.
+     Пример: "Хоббит" Толкина.</p>
+
+
+
+
+
+
+    <script>
+
+
+        // получение имя пользователя
+
+
+
+        let user = localStorage.getItem('currentUser');
+        if (user){ 
+            document.getElementById('username').textContent = user;
+
+        } else {
+            window.location.href = "/html/account.html";
+        }
+    </script>
+
+
+
+    <script>
+
+
+   
+        // играть/остановить музыку
+
+        function playMusic() {
+        const audio = document.getElementById("myAudio");
+        audio.play();
+        }
+
+        function stopMusic(){
+            const audio = document.getElementById("myAudio");
+            audio.pause();
+            audio.currentTime = 0;
+
+        }
+
+
+        // пролистывание до начального текста 
+
+
+        function scrollToTest(){
+            window.scrollTo({
+                top : 100,
+                behavior: "smooth"
+            });
+        }
+
+
+        // играть/остановить другую музыку
+
+        function playMusic1 (){
+        const audio = document.getElementById("myAudio1");
+        audio.play();    
+        }
+
+        function stopMusic1(){
+            const audio = document.getElementById("myAudio1");
+            audio.pause();
+            audio.currentTime = 0;      
+        }
+
+
+        // пролистать до песен
+
+        function scrollToSong(){
+            window.scrollTo({
+                top:800,
+                behavior :"smooth"
+            });
+        }
+
+
+        // пролистать до типов фантазий
+
+
+
+        function scrollToTypes(){
+            window.scrollTo({
+                top:1700,
+                behavior:"smooth"
+            });
+        }
+
+
+        // пролистать наверх
+
+
+        function scrollToTop(){
+            window.scrollTo({
+                top:0,
+                behavior:"smooth"
+            });
+        }
+    </script>
+
+
+
+</body>
+</html>

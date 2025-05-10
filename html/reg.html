@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/style1.css">
+</head>
+<body>
+
+    <!-- видеофон -->
+
+    <video class = "video-bg" autoplay muted loop playsinline>
+        <source src = "/mp4/water.mp4" type = 'video/mp4'>
+    </video>
+
+    <!-- аудио -->
+
+    <audio id="myAudio" src="/sound/4AYBAdhnHQVR.128.mp3"></audio>
+    <img src="/img/high-volume.png" alt="Кликни на фото" id ="music" onclick="playMusic()">
+    <img src = "/img/silent.png" id = "music2" onclick="stopMusic()">
+
+
+    <!-- форма регистрации -->
+
+    <div id = "reg">
+        <h1>Регистрация</h1>
+        <input type = "text" placeholder="Укажите ваш E-mail" id ="regEmail">
+        <input type = "text" placeholder="Введите имя пользователя" id = "regUser">
+        <input type = "password" placeholder="Введите пароль" id = "regPass">
+
+        <button id = "but1" onclick = "Register()">Зарегестрироваться</button>
+
+        <a href = "/html/log.html">
+            <p id = "yet1">Уже есть аккаунт ?</p> 
+        </a>
+    </div>
+
+    
+    
+
+    <p id = "message"></p>
+    <p id  = "message2"></p>
+    <button id = "but2" onclick = "location.href = '/html/log.html'">Войти</button>
+
+    <script>
+
+        // функция регистрации 
+
+        function Register(){
+            let email = document.getElementById('regEmail').value;
+            let username = document.getElementById('regUser').value;
+            let password = document.getElementById('regPass').value;
+            let messageDiv = document.getElementById('message');
+
+
+                
+            
+
+            if(!username || !password || !email) {
+                alert("Введите логин, почту и пароль");
+                return;
+            }
+
+
+            if(localStorage.getItem(username)) {
+                document.getElementById('message').textContent = "Такой пользователь уже существует.";
+            } else {
+                localStorage.setItem(username,password);
+                document.getElementById('message').textContent = "Регистрация прошла успешно !";
+                document.getElementById('message2').textContent = "Теперь войдите в свой аккаунт для того чтобы запустить тест !";
+                document.getElementById('but2').style.display = 'block'
+            } 
+     
+
+        }
+
+
+        function playMusic() {
+        const audio = document.getElementById("myAudio");
+        audio.play();
+        }
+
+        function stopMusic(){
+            const audio = document.getElementById("myAudio");
+            audio.pause();
+            audio.currentTime = 0;
+
+        }
+
+    </script>
+</body>
+</html>

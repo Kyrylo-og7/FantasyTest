@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="/style1.css">
+</head>
+<body>
+
+    <!-- видеофон -->
+
+    <video class = "video-bg" autoplay muted loop playsinline>
+        <source src = "/mp4_3/bright.mp4" type = 'video/mp4'>
+    </video>
+
+
+    <!-- аудио -->
+
+
+    <audio id="myAudio" src="/sound/4AYBAdhnHQVR.128.mp3"></audio>
+    <img src="/img/high-volume.png" alt="Кликни на фото" id ="music" onclick="playMusic()">
+    <img src = "/img/silent.png" id = "music2" onclick="stopMusic()">
+
+
+
+    <!-- форма входа -->
+
+
+
+    <div id = "log">
+    <h1>Вход</h1>
+        <input type = "text" placeholder="Введите имя пользователя" id = "logUser">
+        <input type = "password" placeholder="Введите пароль" id = "logPass">
+        <button id = "but3" onclick = "login()">Войти</button>
+        <a href = "/html/reg.html">
+            <p id = "yet">Нету аккаунта ?</p> 
+        </a>
+    </div>
+
+<p id = "message"></p>
+
+
+
+
+
+    <script>
+
+        // функция входа 
+
+        function login(){
+            let username = document.getElementById('logUser').value;
+            let password = document.getElementById('logPass').value;
+            let storedPass = localStorage.getItem(username);
+
+
+            if(storedPass && storedPass === password) {
+                localStorage.setItem("currentUser", username);
+
+                window.location.href = '/html/ready.html';
+
+                
+            } else {
+                document.getElementById('message').textContent = "Неправильный логин или пароль !";
+            }
+        }
+
+        // играть/остановить музыку
+
+        function playMusic() {
+        const audio = document.getElementById("myAudio");
+        audio.play();
+        }
+
+        function stopMusic(){
+            const audio = document.getElementById("myAudio");
+            audio.pause();
+            audio.currentTime = 0;
+
+        }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Fantasy</title>
+    <link rel="stylesheet" href="/style2.css">
+</head>
+<body>
+
+    <!-- видеофон -->
+
+    <video class = "bg-video"autoplay loop muted plasinline>
+        <source src = "/mp4_4/166881-835629156_small (1).mp4">
+    </video>
+    
+    <!-- аудио -->
+
+    <audio class = "myAudio" src  = "/sound/ExZ5fi7Lyufe.128.mp3" autoplay loop>
+
+    </audio>
+
+    <h1 id = "last2">Поздравляю вас <span id = "username"></span> , Ваш тип фатназии</h1>
+    
+    
+    
+        <img src = "/img/bright.png" id = "lastLogo1">
+
+        <!-- кнопки для просмотра подборок фильмов и возвращения на главную страницу -->    
+
+        <button id = "but18" onclick = "location.href = 'https://docs.google.com/spreadsheets/d/1RfsvmyJJ7bHETX8moI6yfIEla7XpzVNbQjVxyadkfvc/edit?usp=sharing'">Подборка фильмов</button>
+        <button id = "but19" onclick = "location.href = 'https://docs.google.com/spreadsheets/d/1zmpiDm8RrvLxFMeZlalDEfw7BCZ-2ONr-U0mHvv3nWY/edit?usp=sharing'">Подборка песен</button>
+        <button id = "but20" onclick = "location.href = '/html/index.html' ">На главную</button>
+
+
+    <script>
+
+        // получение имя текущего пользователя
+
+        let user = localStorage.getItem('currentUser');
+        if (user){ 
+            document.getElementById('username').textContent = user;
+
+        } else {
+            window.location.href = "/html/log.html";
+        }
+    </script>
+</body>
+</html>

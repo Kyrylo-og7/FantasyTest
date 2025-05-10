@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Test</title>
+    <link rel="stylesheet" href="/style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+    <!-- сообщение которое появляеться после выбора -->
+
+
+    <div class="ask">
+        <h1 id = "message">Ответ засчитан !</h1>
+    </div>
+
+
+    <!-- кнопки которые появляються после выбора -->
+
+    <button id = "but17" onclick = "showNext5()">Продолжить</button>
+
+    <button id = "but16" onclick = "showNext4()">Продолжить</button>
+
+    <button id = "but15" onclick = "showNext3()">Продолжить</button>
+
+    <button id = "but14" onclick = "showNext2()">Продолжить</button>
+
+    <button id = "but13" onclick = "showNext1()">Продолжить</button>
+
+    <button id = "but12" onclick = "showNext()">Продолжить</button>
+    
+    <!-- аудио -->
+
+    <audio id="myAudio2" src="/sound/ExZ5fi7Lyufe.128.mp3" autoplay loop></audio>
+    
+
+    <!-- остановить/играть музыку -->
+
+
+    <img src="/img/high-volume.png" alt="Кликни на фото" id ="music" onclick="playMusic3()">
+    <img src = "/img/silent.png" id = "music2" onclick="stopMusic3()">
+
+
+    <!-- вопрос 1 -->
+
+
+    <div class = "containerT">
+        <h1 id ="ques1">Где бы вы хотели оказаться больше всего ?</h1>
+    </div>
+
+    <!-- вопрос 2 -->
+
+    <div class = "containerT2">
+        <h1 id ="ques1">Где бы вы остались на 1 день ?</h1>
+    </div>
+
+    <!-- вопрос 3 -->
+
+    <div class = "containerT3">
+        <h1 id ="ques1">Кем бы вы были в фэнтези-мире? </h1>
+    </div>
+
+    <!-- вопрос 4 -->
+
+    <div class = "containerT4">
+        <h1 id ="ques1">С кем бы вы сразились ? </h1>
+    </div>
+
+    <!-- вопрос 5 -->
+
+    <div class = "containerT5">
+        <h1 id ="ques1">Кого бы вы приручили ?</h1>
+    </div>
+
+    <!-- вопрос 6 -->
+
+    <div class = "containerT6">
+        <h1 id ="ques1">Куда вас приведет судьба ?</h1>
+    </div>
+
+    <!-- вопрос 7 -->
+
+    <div class = "containerT7">
+        <h1 id ="ques1">Какая концовка для вас идеальна ?</h1>
+    </div>
+
+
+    <!-- счетчик ответов -->
+
+    <h1 id = "counter"><span id ="count">0</span>/7</h1>
+
+
+    <!-- видеофон -->
+
+    <video class = "bg-video" autoplay loop muted playsinline>
+        <source src = "/mp4_5/178474-860033394_small (1).mp4">
+    </video>
+
+        
+        <!-- названия вариантов в вопросах -->
+
+        <div class="question1">
+
+
+           <!-- вопрос 1 -->
+
+            <h1 id = "adv">Гора Сознания</h1>
+            <h1 id = "bri">Деревня Светла</h1>
+            <h1 id = "dark">Замок Высочества</h1>
+            <h1 id = "high">Горы Тьмы</h1>
+
+            <!-- вопрос 2 -->
+
+            <h1 id = "adv1">Дремучая Хижина</h1>
+            <h1 id = "bri1">Городок у реки</h1>
+            <h1 id = "dark1">Ую тная Хижина</h1>
+            <h1 id = "high1">Заброшенный Мост</h1>
+
+             <!-- вопрос 3 -->
+
+            <h1 id = "adv2">Одинокий Рыцарь</h1>
+            <h1 id = "bri2">Загадочный Маг</h1>
+            <h1 id = "dark2">Лесной Дух</h1>
+            <h1 id = "high2">Скрытный Лучник</h1>
+
+            <!-- вопрос 4 -->
+
+            <h1 id = "adv3">Демон</h1>
+            <h1 id = "bri3">Завистливый Маг</h1>
+            <h1 id = "dark3">Наемник Врага</h1>
+            <h1 id = "high3">Темный Властелин</h1>
+
+             <!-- вопрос 5 -->
+
+            <h1 id = "adv4">Темный Волк</h1>
+            <h1 id = "bri4">Крылатый Олень</h1>
+            <h1 id = "dark4">Феникс</h1>
+            <h1 id = "high4">Дракон</h1>
+
+            <!-- вопрос 6 -->
+
+            <h1 id = "adv5">Портал в бездну</h1>
+            <h1 id = "bri5">Башня мудреца</h1>
+            <h1 id = "dark5">Сердце леса</h1>
+            <h1 id = "high5">Конец света</h1>
+
+            <!-- вопрос 7 -->
+
+            <h1 id = "adv6">Одиночество в тени</h1>
+            <h1 id = "bri6">Все общее торжество</h1>
+            <h1 id = "dark6">Уход в закат</h1>
+            <h1 id = "high6">Легенда о герое</h1>
+
+
+ 
+            <!-- вопрос 7 -->
+
+            <img src = "/img/end1.jpg" id = "end1" onclick="location.href = '/html/darkFantasy.html'">
+            <img src = "/img/end2.jpg" id = "end2" onclick="location.href = '/html/brightFantasy.html'">
+            <img src = "/img/end3.jpg" id = "end3" onclick="location.href = '/html/highFantasy.html'">
+            <img src = "/img/end4.jpg" id = "end4" onclick="location.href = '/html/adventureFantasy.html'">
+
+            <!-- вопрос 6 -->
+
+            <img src = "/img/find1.jpg" id = "find1" onclick = "afterChoose5(); counter();">
+            <img src = "/img/find2.jpg" id = "find2" onclick = "afterChoose5(); counter();">
+            <img src = "/img/find3.jpg" id = "find3" onclick = "afterChoose5(); counter();">
+            <img src = "/img/find4.jpg" id = "find4" onclick = "afterChoose5(); counter();">
+
+            <!-- вопрос 5 -->
+
+            <img src = "/img/friend1.jpg" id = "friend1" onclick = "afterChoose4(); counter()">
+            <img src = "/img/friend2.jpg" id = "friend2" onclick = "afterChoose4(); counter()">
+            <img src = "/img/friend3.png" id = "friend3" onclick = "afterChoose4(); counter()">
+            <img src = "/img/friend4.jpg" id = "friend4" onclick = "afterChoose4(); counter()">
+
+
+            <!-- вопрос 4 -->
+
+            <img src = "/img/enemy1.jpg" id = "enemy1" onclick = "afterChoose3(); counter()">
+            <img src = "/img/enemy2.jpg" id = "enemy2" onclick = "afterChoose3(); counter()">
+            <img src = "/img/enemy3.jpg" id = "enemy3" onclick = "afterChoose3(); counter()">
+            <img src = "/img/enemy4.jpg" id = "enemy4" onclick = "afterChoose3(); counter()">
+
+            <!-- вопрос 3 -->
+
+            <img src = "/img/knight1.jpg" id = "knight1" onclick = "afterChoose2(); counter()">
+            <img src = "/img/knight2.jpg" id = "knight2" onclick = "afterChoose2(); counter()">
+            <img src = "/img/knight3.jpg" id = "knight3" onclick = "afterChoose2(); counter()">
+            <img src = "/img/knight4.jpg" id = "knight4" onclick = "afterChoose2(); counter()">
+
+
+            <!-- вопрос 2 -->
+
+            <img src = "/img/house1.jpg" id = "house1" onclick = "afterChoose1(); counter()">
+            <img src = "/img/house2.jpg" id = "house2" onclick = "afterChoose1(); counter()">
+            <img src = "/img/house3.jpg" id = "house3" onclick = "afterChoose1(); counter()">
+            <img src = "/img/house4.jpg" id = "house4" onclick = "afterChoose1(); counter()">
+
+
+            <!-- вопрос 1 -->
+
+            <img src = "/img/adventure-fantasy.jpg" id = "advFan" onclick = "afterChoose(); counter()">
+            <img src = "/img/bright-fantasy.jpg" id = "briFan"  onclick = "afterChoose(); counter()">
+            <img src = "/img/dark-fantasy.jpg" id = "darkFan"  onclick = "afterChoose(); counter()">    
+            <img src = "/img/high-fantasy.jpg" id = "highFan"  onclick = "afterChoose(); counter()">
+        </div>
+  
+
+
+<script>
+
+    // счетчик
+
+    let count = 0;
+
+    function counter(){
+        count += 1;
+        document.getElementById('count').textContent = count;
+    }
+
+
+    // музыка
+
+
+    function playMusic3() {
+        const audio = document.getElementById("myAudio2");
+        audio.play();
+        }
+
+        function stopMusic3(){
+            const audio = document.getElementById("myAudio2");
+            audio.pause();
+            audio.currentTime = 0;
+
+        }
+
+
+        // Исчезновение картинок и текста и появление сообщения "Ответ засчитан" и кнопки "продолжить".
+
+
+        function afterChoose() {
+        document.getElementById('briFan').style.opacity = '0';
+        document.getElementById('advFan').style.opacity = '0';
+        document.getElementById('darkFan').style.opacity = '0';
+        document.getElementById('highFan').style.opacity = '0';
+        document.getElementById('adv').style.display = 'none'
+        document.getElementById('high').style.display = 'none'
+        document.getElementById('bri').style.display = 'none'
+        document.getElementById('dark').style.display = 'none'
+        document.querySelector('.ask').style.display = 'block';
+        document.querySelector('.containerT').style.display = 'none';
+        document.getElementById('but12').style.display = 'block';
+        
+  }
+
+  // Появление следующего вопроса и картинок а также исчезновение сообщения "Ответ засчитан" и кнопки "продолжить".
+
+  function showNext(){
+    document.getElementById('house1').style.opacity = '1';
+    document.getElementById('house1').style.display = 'flex';
+    document.getElementById('house2').style.display = 'flex';
+    document.getElementById('house2').style.opacity = '1';
+    document.getElementById('house3').style.display = 'flex';
+    document.getElementById('house3').style.opacity = '1';
+    document.getElementById('house4').style.display = 'flex';
+    document.getElementById('house4').style.opacity = '1';
+    document.getElementById('adv1').style.display = 'block'
+    document.getElementById('bri1').style.display = 'block'
+    document.getElementById('dark1').style.display = 'block'
+    document.getElementById('high1').style.display = 'block'
+    document.querySelector('.ask').style.display = 'none';
+    document.querySelector('.containerT2').style.display = 'flex';
+    document.getElementById('but12').style.display = 'none';
+
+  }
+
+  function afterChoose1() {
+        document.getElementById('house1').style.opacity = '0';
+        document.getElementById('house2').style.opacity = '0';
+        document.getElementById('house3').style.opacity = '0';
+        document.getElementById('house4').style.opacity = '0';
+        document.getElementById('adv1').style.display = 'none'
+        document.getElementById('high1').style.display = 'none'
+        document.getElementById('bri1').style.display = 'none'
+        document.getElementById('dark1').style.display = 'none'
+        document.querySelector('.ask').style.display = 'block';
+        document.querySelector('.containerT2').style.display = 'none';
+        document.getElementById('but13').style.display = 'block';
+        
+  }
+
+  function showNext1(){
+    document.getElementById('knight1').style.opacity = '1';
+    document.getElementById('knight1').style.display = 'flex';
+    document.getElementById('knight2').style.display = 'flex';
+    document.getElementById('knight2').style.opacity = '1';
+    document.getElementById('knight3').style.display = 'flex';
+    document.getElementById('knight3').style.opacity = '1';
+    document.getElementById('knight4').style.display = 'flex';
+    document.getElementById('knight4').style.opacity = '1';
+    document.getElementById('adv2').style.display = 'block'
+    document.getElementById('bri2').style.display = 'block'
+    document.getElementById('dark2').style.display = 'block'
+    document.getElementById('high2').style.display = 'block'
+    document.querySelector('.ask').style.display = 'none';
+    document.querySelector('.containerT3').style.display = 'flex';
+    document.getElementById('but13').style.display = 'none';
+
+  }
+
+  function afterChoose2() {
+        document.getElementById('knight1').style.opacity = '0';
+        document.getElementById('knight2').style.opacity = '0';
+        document.getElementById('knight3').style.opacity = '0';
+        document.getElementById('knight4').style.opacity = '0';
+        document.getElementById('adv2').style.display = 'none'
+        document.getElementById('high2').style.display = 'none'
+        document.getElementById('bri2').style.display = 'none'
+        document.getElementById('dark2').style.display = 'none'
+        document.querySelector('.ask').style.display = 'block';
+        document.querySelector('.containerT3').style.display = 'none';
+        document.getElementById('but14').style.display = 'block';
+        
+  }
+
+  function showNext2(){
+    document.getElementById('enemy1').style.opacity = '1';
+    document.getElementById('enemy1').style.display = 'flex';
+    document.getElementById('enemy2').style.display = 'flex';
+    document.getElementById('enemy2').style.opacity = '1';
+    document.getElementById('enemy3').style.display = 'flex';
+    document.getElementById('enemy3').style.opacity = '1';
+    document.getElementById('enemy4').style.display = 'flex';
+    document.getElementById('enemy4').style.opacity = '1';
+    document.getElementById('adv3').style.display = 'block'
+    document.getElementById('bri3').style.display = 'block'
+    document.getElementById('dark3').style.display = 'block'
+    document.getElementById('high3').style.display = 'block'
+    document.querySelector('.ask').style.display = 'none';
+    document.querySelector('.containerT4').style.display = 'flex';
+    document.getElementById('but14').style.display = 'none';
+
+  }
+
+  function afterChoose3() {
+        document.getElementById('enemy1').style.opacity = '0';
+        document.getElementById('enemy2').style.opacity = '0';
+        document.getElementById('enemy3').style.opacity = '0';
+        document.getElementById('enemy4').style.opacity = '0';
+        document.querySelector('.ask').style.display = 'block';
+        document.getElementById('adv3').style.display = 'none'
+        document.getElementById('high3').style.display = 'none'
+        document.getElementById('bri3').style.display = 'none'
+        document.getElementById('dark3').style.display = 'none'
+        document.querySelector('.containerT4').style.display = 'none';
+        document.getElementById('but15').style.display = 'block';
+        
+  }
+
+  function showNext3(){
+    document.getElementById('friend1').style.opacity = '1';
+    document.getElementById('friend1').style.display = 'flex';
+    document.getElementById('friend2').style.display = 'flex';
+    document.getElementById('friend2').style.opacity = '1';
+    document.getElementById('friend3').style.display = 'flex';
+    document.getElementById('friend3').style.opacity = '1';
+    document.getElementById('friend4').style.display = 'flex';
+    document.getElementById('friend4').style.opacity = '1';
+    document.getElementById('adv4').style.display = 'block'
+    document.getElementById('bri4').style.display = 'block'
+    document.getElementById('dark4').style.display = 'block'
+    document.getElementById('high4').style.display = 'block'
+    document.querySelector('.ask').style.display = 'none';
+    document.querySelector('.containerT5').style.display = 'flex';
+    document.getElementById('but15').style.display = 'none';
+
+  }
+
+  function afterChoose4() {
+        document.getElementById('friend1').style.opacity = '0';
+        document.getElementById('friend2').style.opacity = '0';
+        document.getElementById('friend3').style.opacity = '0';
+        document.getElementById('friend4').style.opacity = '0';
+        document.querySelector('.ask').style.display = 'block';
+        document.getElementById('adv4').style.display = 'none'
+        document.getElementById('high4').style.display = 'none'
+        document.getElementById('bri4').style.display = 'none'
+        document.getElementById('dark4').style.display = 'none'
+        document.querySelector('.containerT5').style.display = 'none';
+        document.getElementById('but16').style.display = 'block';
+        
+  }
+
+  function showNext4(){
+    document.getElementById('find1').style.opacity = '1';
+    document.getElementById('find1').style.display = 'flex';
+    document.getElementById('find2').style.display = 'flex';
+    document.getElementById('find2').style.opacity = '1';
+    document.getElementById('find3').style.display = 'flex';
+    document.getElementById('find3').style.opacity = '1';
+    document.getElementById('find4').style.display = 'flex';
+    document.getElementById('find4').style.opacity = '1';
+    document.getElementById('adv5').style.display = 'block'
+    document.getElementById('bri5').style.display = 'block'
+    document.getElementById('dark5').style.display = 'block'
+    document.getElementById('high5').style.display = 'block'
+    document.querySelector('.ask').style.display = 'none';
+    document.querySelector('.containerT6').style.display = 'flex';
+    document.getElementById('but16').style.display = 'none';
+
+  }
+
+  function afterChoose5() {
+        document.getElementById('find1').style.opacity = '0';
+        document.getElementById('find2').style.opacity = '0';
+        document.getElementById('find3').style.opacity = '0';
+        document.getElementById('find4').style.opacity = '0';
+        document.querySelector('.ask').style.display = 'block';
+        document.getElementById('adv5').style.display = 'none'
+        document.getElementById('high5').style.display = 'none'
+        document.getElementById('bri5').style.display = 'none'
+        document.getElementById('dark5').style.display = 'none'
+        document.querySelector('.containerT6').style.display = 'none';
+        document.getElementById('but17').style.display = 'block';
+        
+  }
+
+  function showNext5(){
+    document.getElementById('end1').style.opacity = '1';
+    document.getElementById('end1').style.display = 'flex';
+    document.getElementById('end2').style.display = 'flex';
+    document.getElementById('end2').style.opacity = '1';
+    document.getElementById('end3').style.display = 'flex';
+    document.getElementById('end3').style.opacity = '1';
+    document.getElementById('end4').style.display = 'flex';
+    document.getElementById('end4').style.opacity = '1';
+    document.getElementById('adv6').style.display = 'block'
+    document.getElementById('bri6').style.display = 'block'
+    document.getElementById('dark6').style.display = 'block'
+    document.getElementById('high6').style.display = 'block'
+    document.querySelector('.ask').style.display = 'none';
+    document.querySelector('.containerT7').style.display = 'flex';
+    document.getElementById('but17').style.display = 'none';
+
+  }
+
+</script>
+
+
+</body>
+</html>

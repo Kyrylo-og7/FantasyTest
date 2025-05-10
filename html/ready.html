@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are you ready ?</title>
+    <link rel="stylesheet" href="/style1.css">
+    
+</head>
+<body>
+    
+
+
+
+    
+    <!-- видеофон -->
+
+    <video class = "video-bg" autoplay muted loop playsinline>
+        <source src = "/mp4/home.mp4" type = 'video/mp4'>
+    </video>
+
+    <!-- аудио -->
+
+    <audio id="myAudio" src="/sound/4AYBAdhnHQVR.128.mp3"></audio>
+    <img src="/img/high-volume.png" alt="Кликни на фото" id ="music" onclick="playMusic()">
+    <img src = "/img/silent.png" id = "music2" onclick="stopMusic()">
+
+
+
+
+   
+
+
+     
+
+    <div class = "container">
+
+
+        
+        <h1>Итак , <span id = "username"></span> ты готов ?</h1>
+        
+        <button id = "but9" onclick = "location.href = '/html/test1.html'">Да</button> 
+        
+        <button class  = "but10">Нет</button>
+
+        <img class = "knight" src = "/img/knight.png" onclick = "message()">
+
+        
+        
+        
+        
+        
+        
+    </div>
+
+
+ <!-- речь рыцаря    -->
+    
+<p id = "message1" style="display: none;">Пути назад нет.</p>
+
+<script>
+
+    // получение имя текущего пользователя
+
+    let user = localStorage.getItem('currentUser');
+    if(user){
+        document.getElementById('username').textContent = user;
+    } else {
+        window.location.href = "/html/log.html";
+
+    }
+
+
+
+// появление и исчезновение речи рыцаря
+
+function message(){
+    let msg = document.getElementById('message1');
+    msg.style.display = 'block';
+    setTimeout( () => {
+        msg.style.display = 'none';
+
+    }, 3000);
+}
+
+
+// музыка
+
+function playMusic() {
+        const audio = document.getElementById("myAudio");
+        audio.play();
+        }
+
+        function stopMusic(){
+            const audio = document.getElementById("myAudio");
+            audio.pause();
+            audio.currentTime = 0;
+
+        }
+
+
+</script>
+
+
+
+
+</body>
+</html>
